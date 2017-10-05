@@ -49,4 +49,16 @@ Sometimes you may need to link browser container to application container runnin
 ```
 applicationContainers: my-app:some-alias,another-app
 ```
-Links are specified as a comma-separated list of `<name>[:<alias>]` pairs. 
+Links are specified as a comma-separated list of `<name>[:<alias>]` pairs.
+
+=== Extra hosts
+
+You can specify additional host entries that are added to /etc/hosts file inside a browser container (if case you need different hosts file entries for each browser session)
+```
+extraHosts: my-cool-app:192.168.1.1
+```
+Extra hosts are specified as a comma-separated list of `<hostname>:<ip_address>` pairs.
+[NOTE]
+====
+Host entries, passed via this capability will have precedence over the values from <<Browsers Configuration File>> (in case of duplicate entries for the same hostname)
+====

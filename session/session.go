@@ -15,6 +15,7 @@ type Caps struct {
 	TimeZone              string `json:"timeZone"`
 	ContainerHostname     string `json:"containerHostname"`
 	ApplicationContainers string `json:"applicationContainers"`
+	HostEntries           string `json:"hostEntries"`
 }
 
 // Session - holds session info

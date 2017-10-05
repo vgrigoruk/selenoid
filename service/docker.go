@@ -73,6 +73,10 @@ func (d *Docker) StartWithCancel() (*StartedService, error) {
 	if len(d.Service.Hosts) > 0 {
 		extraHosts = append(extraHosts, d.Service.Hosts...)
 	}
+	if d.HostEntries != "" {
+		hostsFromCaps := strings.Split(d.HostEntries, ",")
+		extraHosts = append(hostsFromCaps, extraHosts...)
+	}
 	containerHostname := "localhost"
 	if d.ContainerHostname != "" {
 		containerHostname = d.ContainerHostname
